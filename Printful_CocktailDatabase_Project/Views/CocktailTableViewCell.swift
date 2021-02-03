@@ -36,7 +36,7 @@ class CocktailTableViewCell: UITableViewCell {
     
     let backgroundViewForCocktailType: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.systemRed.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.systemPink.withAlphaComponent(0.6)
         view.layer.cornerRadius = 12
         view.layer.cornerCurve = .continuous
         view.translatesAutoresizingMaskIntoConstraints = false
