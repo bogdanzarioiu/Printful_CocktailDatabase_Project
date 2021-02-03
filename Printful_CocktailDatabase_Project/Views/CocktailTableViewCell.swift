@@ -36,7 +36,7 @@ class CocktailTableViewCell: UITableViewCell {
     
     let backgroundViewForCocktailType: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.systemPink.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.6)
         view.layer.cornerRadius = 12
         view.layer.cornerCurve = .continuous
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,7 @@ class CocktailTableViewCell: UITableViewCell {
     
     let cocktailType: UILabel = {
         let title = UILabel()
-        title.textColor = .white
+        title.textColor = .black
         title.font = UIFont.init(name: "AvenirNext-Medium", size: 10)
         title.translatesAutoresizingMaskIntoConstraints = false
         

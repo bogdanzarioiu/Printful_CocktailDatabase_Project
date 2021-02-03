@@ -41,7 +41,7 @@ class APIManager {
             do {
                 let responses = try JSONDecoder().decode(Cocktails.self, from: data)
                 for response in responses.drinks {
-                    guard let photoUrl = URL(string: response.strDrinkThumb) else { return }
+                    guard let photoUrl = URL(string: response.cocktailImageURL) else { return }
                     guard let photoData = try? Data(contentsOf: photoUrl) else { return }
                     guard let photoImage = UIImage(data: photoData) else { return }
                     photos.append(photoImage)

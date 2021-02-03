@@ -117,8 +117,8 @@ extension CocktailsListViewController: UITableViewDelegate, UITableViewDataSourc
         let cocktail = cocktails[indexPath.row]
         let cocktailPicture = photos[indexPath.row]
         cocktailCell.cocktailImage.image = cocktailPicture
-        cocktailCell.cocktailTitle.text = cocktail.strDrink
-        cocktailCell.cocktailType.text = cocktail.strAlcoholic
+        cocktailCell.cocktailTitle.text = cocktail.name
+        cocktailCell.cocktailType.text = cocktail.type
         
         
         return cocktailCell
@@ -126,11 +126,11 @@ extension CocktailsListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let ingredients = "\(cocktails[indexPath.row].strIngredient1 ?? ""), \(cocktails[indexPath.row].strIngredient2 ?? ""), \(cocktails[indexPath.row].strIngredient3 ?? ""), \(cocktails[indexPath.row].strIngredient4 ?? ""), \(cocktails[indexPath.row].strIngredient5 ?? "")"
+        let ingredients = "\(cocktails[indexPath.row].ingredient1 ?? ""), \(cocktails[indexPath.row].ingredient2 ?? ""), \(cocktails[indexPath.row].ingredient3 ?? ""), \(cocktails[indexPath.row].ingredient4 ?? ""), \(cocktails[indexPath.row].ingredient5 ?? "")"
         
         let cocktailDetailsVC = CocktailDetailViewController()
         cocktailDetailsVC.cocktailImageView.image = photos[indexPath.row]
-        cocktailDetailsVC.cocktailPreparationTextView.text = cocktails[indexPath.row].strInstructions + "\n\nIngredients:\n\(ingredients)"
+        cocktailDetailsVC.cocktailPreparationTextView.text = cocktails[indexPath.row].instructions + "\n\nIngredients:\n\(ingredients)"
         navigationController?.pushViewController(cocktailDetailsVC, animated: true)
     }
     
